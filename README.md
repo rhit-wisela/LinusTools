@@ -1,6 +1,3 @@
-# LinusTools
-some maple functions I wrote that might be useful. will be updated periodically until May 2026
-
 # Installation Directions
 1. Download LinusTools.mw
 2. Run Maple as administrator (required for saving the package to the proper directory)
