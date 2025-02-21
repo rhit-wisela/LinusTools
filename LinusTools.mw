@@ -92,7 +92,7 @@
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">LinusTools := module()
   option package;
   description &quot;some misc EE tools&quot;;
-  export pp, r2p, p2r, er2p, ep2r, zl, zc, cnv, cnv2, tri, tri2, delta, delta2, u, u2, conv, conv2, sinc, angle, eangle, rect, u2db, db2u, average, stdev;
+  export par, r2p, p2r, er2p, ep2r, zl, zc, cnv, cnv2, tri, tri2, delta, delta2, u, u2, conv, conv2, sinc, angle, eangle, rect, u2db, db2u, avg, stdev;
 
   r2p:=proc(z)
     return abs(z),angle(z):
@@ -129,7 +129,7 @@
   end proc:
 
   eangle:=(z)-&gt;evalf(angle(z)):
-  rect:=(t)-&gt;Heaviside(t+1/2)-Heaviside(t-1/2):
+  rect:=(t)-&gt;u2(t+1/2)-u2(t-1/2):
   u2db:=(u)-&gt;20*log(u,10):
   db2u:=(dB)-&gt;10^(dB/20):
 
@@ -152,7 +152,7 @@
     return limit(sin(k*Pi)/(k*Pi),k=t):
   end proc:
 
-  pp := proc( x::seq(anything) )
+  par := proc( x::seq(anything) )
     local a := 0;
     for local k in [x] do
       a := a + 1/k;
@@ -160,7 +160,7 @@
     return 1/a;
   end proc:
 
-  average:=proc(x::seq(anything))
+  avg:=proc(x::seq(anything))
     local new := [x]:
     local sze := nops(new):
     local dev := sum(new[k],k=1..sze)/sze:
@@ -230,11 +230,11 @@ end module:</Text-field>
 </Input>
 </Group>
 <Group labelreference="L58" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(LibraryTools):
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">with(LibraryTools):
 with(FileTools):
 
-LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
-savelib(LinusTools,DegreeMode,LibLocation):</Font></Text-field>
+<Font encoding="UTF-8">LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
+</Font>savelib(LinusTools,DegreeMode,LibLocation):</Text-field>
 </Input>
 </Group>
 <Group labelreference="L64" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
