@@ -92,10 +92,21 @@
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">LinusTools := module()
   option package;
   description &quot;some misc EE tools&quot;;
-  export pp, r2p, p2r, er2p, ep2r, zl, zc, cnv, cnv2, tri, tri2, delta, delta2, u, u2, conv, conv2, sinc, ar, ad, ear, ead, rect, u2db, db2u, average, stdev;
+  export pp, r2p, p2r, er2p, ep2r, zl, zc, cnv, cnv2, tri, tri2, delta, delta2, u, u2, conv, conv2, sinc, angle, eangle, rect, u2db, db2u, average, stdev;
 
-  r2p:=(z)-&gt;[abs(z),ad(z)]:
-  p2r:=(r,theta)-&gt;r*exp(I*theta*Pi/180):
+  r2p:=proc(z)
+    return abs(z),angle(z):
+  end proc:
+
+  p2r:=proc(r,theta)
+   if member(DegreeMode,packages()) then
+    return DegreeMode:-p2r(r,theta):
+   else
+    return r*exp(I*theta):
+   end if:
+  end proc:
+  
+
   er2p:=(z)-&gt;evalf(r2p(z)):
   ep2r:=(r,theta)-&gt;evalf(p2r(r,theta)):
   zl:=(w,l)-&gt;I*w*l:
@@ -108,10 +119,16 @@
   delta2:=(t)-&gt;piecewise(t = 0, 1, 0);
   u:=(t)-&gt;Heaviside(t):
   u2:=(t)-&gt;piecewise(t &gt;= 0, 1, 0);
-  ar:=(z)-&gt;arctan(Im(z),Re(z)):
-  ad:=(z)-&gt;arctan(Im(z),Re(z))*180/Pi:
-  ear:=(z)-&gt;evalf(ar(z)):
-  ead:=(z)-&gt;evalf(ad(z)):
+
+  angle:=proc(z)
+   if member(DegreeMode,packages()) then
+    return DegreeMode:-angle(z):
+   else
+    return arctan(Im(z),Re(z)):
+   end if:
+  end proc:
+
+  eangle:=(z)-&gt;evalf(angle(z)):
   rect:=(t)-&gt;Heaviside(t+1/2)-Heaviside(t-1/2):
   u2db:=(u)-&gt;20*log(u,10):
   db2u:=(dB)-&gt;10^(dB/20):
@@ -170,7 +187,7 @@ end module:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">DegreeMode := module()
   option package;
   description &quot;degree mode for maple&quot;;
-  export sin, cos, tan, sec, csc, cot, arccos, arcsin, arctan, arcsec, arccsc, arccot, deg, rad, exp;
+  export sin, cos, tan, sec, csc, cot, arccos, arcsin, arctan, arcsec, arccsc, arccot, deg, rad, exp, p2r, angle;
 
   local isDeg := 1:
 
@@ -205,11 +222,19 @@ end module:</Text-field>
     return :-exp(R+sqrt(-1)*i):
   end proc:
 
+  p2r:=(r,theta)-&gt;r*exp(I*theta):
+  angle:=z-&gt;arctan(Im(z),Re(z)):
+  
+
 end module:</Text-field>
 </Input>
 </Group>
 <Group labelreference="L58" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">savelib(LinusTools,DegreeMode):</Text-field>
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8">with(LibraryTools):
+with(FileTools):
+
+LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
+savelib(LinusTools,DegreeMode,LibLocation):</Font></Text-field>
 </Input>
 </Group>
 <Group labelreference="L64" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
