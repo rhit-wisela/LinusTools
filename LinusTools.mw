@@ -195,7 +195,7 @@ end module:</Text-field>
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">DegreeMode := module()
   option package;
   description &quot;degree mode for maple&quot;;
-  export sin, cos, tan, sec, csc, cot, arccos, arcsin, arctan, arcsec, arccsc, arccot, deg, rad, exp, p2r, angle;
+  export sin, cos, tan, sec, csc, cot, arccos, arcsin, arctan, arcsec, arccsc, arccot, deg, rad, exp, r2p, p2r, angle;
 
   local isDeg := 1:
 
@@ -230,6 +230,10 @@ end module:</Text-field>
     return :-exp(R+sqrt(-1)*i):
   end proc:
 
+  r2p:=proc(z)
+    return abs(z),angle(z):
+  end proc:
+
   p2r:=(r,theta)-&gt;r*exp(I*theta):
   angle:=z-&gt;arctan(Im(z),Re(z)):
   
@@ -244,8 +248,6 @@ with(FileTools):
 <Font encoding="UTF-8">LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
 </Font>savelib(LinusTools,DegreeMode,LibLocation):</Text-field>
 </Input>
-<Output><Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20cannot%20lock%20repository,%20C%3A%5CProgram%20Files%5CMaple%202023%5Clib%5CLinusTools.mla" hyperlink="true"><Font style="HyperlinkError" encoding="UTF-8">Error, cannot lock repository, C:\134Program Files\134Maple 2023\134lib\134LinusTools.mla</Font></Hyperlink></Text-field>
-</Output>
 </Group>
 <Group labelreference="L64" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
