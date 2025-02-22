@@ -94,6 +94,12 @@
   description &quot;some misc EE tools&quot;;
   export par, r2p, p2r, er2p, ep2r, zl, zc, cnv, cnv2, tri, tri2, delta, delta2, u, u2, conv, conv2, sinc, angle, eangle, rect, u2db, db2u, avg, stdev;
 
+
+
+  local use_j := true:
+
+
+
   r2p:=proc(z)
     return abs(z),angle(z):
   end proc:
@@ -176,7 +182,9 @@
 
   export init := proc()
     with(inttrans);
-    interface(imaginaryunit='j');
+    if use_j then
+      interface(imaginaryunit='j');
+    end if:
   end proc:
 
 
@@ -236,6 +244,8 @@ with(FileTools):
 <Font encoding="UTF-8">LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
 </Font>savelib(LinusTools,DegreeMode,LibLocation):</Text-field>
 </Input>
+<Output><Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20cannot%20lock%20repository,%20C%3A%5CProgram%20Files%5CMaple%202023%5Clib%5CLinusTools.mla" hyperlink="true"><Font style="HyperlinkError" encoding="UTF-8">Error, cannot lock repository, C:\134Program Files\134Maple 2023\134lib\134LinusTools.mla</Font></Hyperlink></Text-field>
+</Output>
 </Group>
 <Group labelreference="L64" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>

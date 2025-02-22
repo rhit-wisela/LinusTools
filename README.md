@@ -5,8 +5,9 @@
 
 # LinusTools Documentation
   Changes made on load:
-  - load the inttrans package
-  - rename √(-1) to 'j'
+  - load the inttrans package.
+  - rename √(-1) to 'j'.
+    - to disable, change the declaration of use_j to false.
 
   Functions:
   - angle(z)
