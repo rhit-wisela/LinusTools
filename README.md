@@ -41,7 +41,10 @@
   - er2p(z)
     - returns evalf(r2p(z).
   - init
-    - function run on package load. likely does nothing.
+    - function run on package load. likely does nothing if used manually.
+  - listmath(x,f,k)
+    - applies f(k) on each element in x.
+    - example: listmath([1,2,3],x^2,x) = [1,4,9]
   - p2r(r,theta)
     - converts the given polar number to rectangular
     - example: p2r(1,π/2) = j
