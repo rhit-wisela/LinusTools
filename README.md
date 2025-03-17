@@ -106,3 +106,15 @@
   - arctan(1) = 45
   - exp(180*j) = -1
   - r2p(j) = 1,90
+
+# Constants Documentation
+  Defines some constants I have found personally useful.
+
+  - c = speed of light
+  - e = euler's number
+  - epsilon = electric permativity of free space
+  - k_ev = boltzmann's constant (ev/K)
+  - k_j = boltzmann's constant (J/K)
+  - mol = avogadro's number
+  - mu = magnetic permativity of free space
+  - q = electron charge

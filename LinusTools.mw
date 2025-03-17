@@ -247,16 +247,29 @@ end module:</Text-field>
 end module:</Text-field>
 </Input>
 </Group>
+<Group labelreference="L65" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">Constants := module()
+  option package;
+  description &quot;some useful constants. add more if you want&quot;;
+
+  export c := 299792458;
+  export k_ev := 8.617333262e-5;
+  export k_j := 1.380649e-23;
+  export q := 1.60217663e-19;
+  export e := evalf(exp(1));
+  export mol := 6.02214076e23;
+  export mu := 4e-7*Pi;
+  export epsilon := 1/(mu*c^2);
+
+end module:</Text-field>
+</Input>
+</Group>
 <Group labelreference="L58" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">with(LibraryTools):
 with(FileTools):
 
 <Font encoding="UTF-8">LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
-</Font>savelib(LinusTools,DegreeMode,LibLocation):</Text-field>
-</Input>
-</Group>
-<Group labelreference="L64" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
-<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Font>savelib(LinusTools,DegreeMode,Constants,LibLocation):</Text-field>
 </Input>
 </Group>
 </Worksheet>
