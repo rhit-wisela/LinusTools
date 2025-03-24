@@ -118,3 +118,4 @@
   - mol = avogadro's number
   - mu = magnetic permativity of free space
   - q = electron charge
+  - pasctorr = conversion rate from pascal to torr (1 pasc = pasctorr torr)

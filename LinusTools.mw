@@ -260,6 +260,7 @@ end module:</Text-field>
   export mol := 6.02214076e23;
   export mu := 4e-7*Pi;
   export epsilon := 1/(mu*c^2);
+  export pasctorr := 133.32;
 
 end module:</Text-field>
 </Input>
