@@ -112,14 +112,13 @@
 # Constants Documentation
   Defines some constants I have found personally useful.
 
-  - c = speed of light
+  - c = speed of light (m/s)
   - e = euler's number
-  - epsilon0 = electric permativity of free space
-  - k_ev = boltzmann's constant (ev/K)
-  - k_j = boltzmann's constant (J/K)
+  - epsilon0 = electric permativity of free space (F/m)
+  - k = boltzmann's constant (J/K)
   - mol = avogadro's number
-  - mu0 = magnetic permativity of free space
-  - q = electron charge
+  - mu0 = magnetic permativity of free space (H/m)
+  - q = electron charge (C)
 
 # units Documentation
   Multiply your number by its units to automatically convert it to m, J, kg, pasc, F, H, Ohm.
