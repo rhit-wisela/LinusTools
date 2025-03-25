@@ -4,6 +4,8 @@
 3. Execute the entire worksheet
 
 # LinusTools Documentation
+  Generic package of useful functions.
+
   Changes made on load:
   - load the inttrans package.
   - rename √(-1) to 'j'.
@@ -112,10 +114,14 @@
 
   - c = speed of light
   - e = euler's number
-  - epsilon = electric permativity of free space
+  - epsilon0 = electric permativity of free space
   - k_ev = boltzmann's constant (ev/K)
   - k_j = boltzmann's constant (J/K)
   - mol = avogadro's number
-  - mu = magnetic permativity of free space
+  - mu0 = magnetic permativity of free space
   - q = electron charge
-  - pasctorr = conversion rate from pascal to torr (1 pasc = pasctorr torr)
+
+# units Documentation
+  Multiply your number by its units to automatically convert it to m, J, kg, pasc, F, H, Ohm.
+  Set of prefixes is incomplete. Feel free to add your own its not hard.
+  Notably does not support C to K conversion because you can't do that with multiplication.

@@ -253,14 +253,59 @@ end module:</Text-field>
   description &quot;some useful constants. add more if you want&quot;;
 
   export c := 299792458;
-  export k_ev := 8.617333262e-5;
-  export k_j := 1.380649e-23;
+  export k := 1.380649e-23;
   export q := 1.60217663e-19;
   export e := evalf(exp(1));
+  export mu0 := 4e-7*Pi;
+  export epsilon0 := 1/(mu*c^2);
+
+end module:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L67" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">units := module()
+  option package:
+  description &quot;If you have an annoying amount of unit conversions, use this&quot;:
+
+  export m:=1:
+  export km:=m*1e3:
+  export cm:=m*1e-2:
+  export mm:=m*1e-3:
+  export um:=m*1e-6:
+  export nm:=m*1e-9:
+
+  export J:=1:
+  export ev:=J/1.60217663e-19:
+
+  export kg:=1:
+  export g:=kg*1e-3:
+  export mg:=kg*1e-6:
+  export ug:=kg*1e-9:
+
+  export K:=1:
+
+  export pasc:=1:
+  export torr := pasc*133.32:
+
   export mol := 6.02214076e23;
-  export mu := 4e-7*Pi;
-  export epsilon := 1/(mu*c^2);
-  export pasctorr := 133.32;
+
+  export F:=1:
+  export mF:=F*1e-3:
+  export uF:=F*1e-6:
+  export nF:=F*1e-9:
+  export pF:=F*1e-12:
+
+  export H:=1:
+  export mH:=H*1e-3:
+  export uH:=H*1e-6:
+  export nH:=H*1e-9:
+  export pH:=H*1e-12:
+
+  export Ohm:=1:
+  export GOhm:=Ohm*1e9:
+  export MOhm:=Ohm*1e6:
+  export kOhm:=Ohm*1e3:
+  export mOhm:=Ohm*1e-3:
 
 end module:</Text-field>
 </Input>
@@ -270,7 +315,11 @@ end module:</Text-field>
 with(FileTools):
 
 <Font encoding="UTF-8">LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
-</Font>savelib(LinusTools,DegreeMode,Constants,LibLocation):</Text-field>
+</Font>savelib(LinusTools,DegreeMode,Constants,units,LibLocation):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L69" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
 </Input>
 </Group>
 </Worksheet>
