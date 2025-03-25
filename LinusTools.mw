@@ -275,7 +275,7 @@ end module:</Text-field>
   export nm:=m*1e-9:
 
   export J:=1:
-  export ev:=J/1.60217663e-19:
+  export ev:=J*1.60217663e-19:
 
   export kg:=1:
   export g:=kg*1e-3:
