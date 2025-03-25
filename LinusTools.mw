@@ -306,6 +306,17 @@ end module:</Text-field>
   export MOhm:=Ohm*1e6:
   export kOhm:=Ohm*1e3:
   export mOhm:=Ohm*1e-3:
+ 
+  export sec:=1:
+  export year:=sec*3.155760000*10^7:
+  export day:=sec*86400*sec:
+  export hour:=sec*3600*sec:
+  export minute:=sec*60*sec:
+  export ms:=sec*1e-3:
+  export us:=sec*1e-6:
+  export ns:=sec*1e-9:
+  export ps:=sec*1e-12:
+
 
 end module:</Text-field>
 </Input>
@@ -317,6 +328,8 @@ with(FileTools):
 <Font encoding="UTF-8">LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
 </Font>savelib(LinusTools,DegreeMode,Constants,units,LibLocation):</Text-field>
 </Input>
+<Output><Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20cannot%20lock%20repository,%20C%3A%5CProgram%20Files%5CMaple%202023%5Clib%5CLinusTools.mla" hyperlink="true"><Font style="HyperlinkError" encoding="UTF-8">Error, cannot lock repository, C:\134Program Files\134Maple 2023\134lib\134LinusTools.mla</Font></Hyperlink></Text-field>
+</Output>
 </Group>
 <Group labelreference="L69" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>

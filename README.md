@@ -121,6 +121,6 @@
   - q = electron charge (C)
 
 # units Documentation
-  Multiply your number by its units to automatically convert it to m, J, kg, pasc, F, H, Ohm.
+  Multiply your number by its units to automatically convert it to m, J, kg, pasc, sec, F, H, Ohm.
   Set of prefixes is incomplete. Feel free to add your own its not hard.
   Notably does not support C to K conversion because you can't do that with multiplication.
