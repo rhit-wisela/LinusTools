@@ -308,14 +308,14 @@ end module:</Text-field>
   export mOhm:=Ohm*1e-3:
  
   export s:=1:
-  export year:=sec*3.155760000*10^7:
-  export day:=sec*86400*sec:
-  export hr:=sec*3600*sec:
-  export min:=sec*60*sec:
-  export ms:=sec*1e-3:
-  export us:=sec*1e-6:
-  export ns:=sec*1e-9:
-  export ps:=sec*1e-12:
+  export year:=s*3.155760000*10^7:
+  export day:=s*86400*sec:
+  export hr:=s*3600*sec:
+  export min:=s*60*sec:
+  export ms:=s*1e-3:
+  export us:=s*1e-6:
+  export ns:=s*1e-9:
+  export ps:=s*1e-12:
 
   export A:=1:
   export kA:=A*1e3:
