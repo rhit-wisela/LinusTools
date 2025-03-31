@@ -273,6 +273,7 @@ end module:</Text-field>
   export mm:=m*1e-3:
   export um:=m*1e-6:
   export nm:=m*1e-9:
+  export A:=m*1e-10:
 
   export J:=1:
   export ev:=J*1.60217663e-19:
@@ -337,6 +338,8 @@ end module:</Text-field>
 
 end module:</Text-field>
 </Input>
+<Output><Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20(in%20units)%20exported%20variable%20%60A%60%20cannot%20be%20multiply%20declared" hyperlink="true"><Font style="HyperlinkError">Error, (in units) exported variable `A` cannot be multiply declared</Font></Hyperlink></Text-field>
+</Output>
 </Group>
 <Group labelreference="L70" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">AllLinus := module()
