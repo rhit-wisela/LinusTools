@@ -257,7 +257,7 @@ end module:</Text-field>
   export q := 1.60217663e-19;
   export e := evalf(exp(1));
   export mu0 := 4e-7*Pi;
-  export epsilon0 := 1/(mu*c^2);
+  export epsilon0 := 1/(mu0*c^2);
 
 end module:</Text-field>
 </Input>
@@ -273,7 +273,7 @@ end module:</Text-field>
   export mm:=m*1e-3:
   export um:=m*1e-6:
   export nm:=m*1e-9:
-  export A:=m*1e-10:
+  export Am:=m*1e-10:
 
   export J:=1:
   export ev:=J*1.60217663e-19:
