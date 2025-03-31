@@ -277,10 +277,10 @@ end module:</Text-field>
   export J:=1:
   export ev:=J*1.60217663e-19:
 
-  export kg:=1:
-  export g:=kg*1e-3:
-  export mg:=kg*1e-6:
-  export ug:=kg*1e-9:
+  export g:=1e-3:
+  export kg:=g*1e3:
+  export mg:=g*1e-6:
+  export ug:=g*1e-9:
 
   export K:=1:
 
@@ -307,15 +307,50 @@ end module:</Text-field>
   export kOhm:=Ohm*1e3:
   export mOhm:=Ohm*1e-3:
  
-  export sec:=1:
+  export s:=1:
   export year:=sec*3.155760000*10^7:
   export day:=sec*86400*sec:
-  export hour:=sec*3600*sec:
-  export minute:=sec*60*sec:
+  export hr:=sec*3600*sec:
+  export min:=sec*60*sec:
   export ms:=sec*1e-3:
   export us:=sec*1e-6:
   export ns:=sec*1e-9:
   export ps:=sec*1e-12:
+
+  export A:=1:
+  export kA:=A*1e3:
+  export mA:=A*1e-3:
+  export uA:=A*1e-6:
+  export nA:=A*1e-9:
+  export pA:=A*1e-12:
+
+  export V:=1:
+  export GV:=V*1e9:
+  export MV:=V*1e6:
+  export kV:=V*1e3:
+  export mV:=V*1e-3:
+  export uV:=V*1e-6:
+  export nV:=V*1e-9:
+  export pV:=V*1e-12:
+  
+
+
+end module:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L70" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
+<Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal">AllLinus := module()
+  option package:
+  description &quot;macro to import all packages in this tool&quot;:
+
+ 
+  export init := proc()
+    with(LinusTools):
+    with(DegreeMode):
+    with(Constants):
+    with(units):
+    DegreeMode:-rad():
+  end proc:
 
 
 end module:</Text-field>
@@ -326,10 +361,8 @@ end module:</Text-field>
 with(FileTools):
 
 <Font encoding="UTF-8">LibLocation:=cat(kernelopts(mapledir),&quot;\134\134lib\134\134LinusTools.mla&quot;):
-</Font>savelib(LinusTools,DegreeMode,Constants,units,LibLocation):</Text-field>
+</Font>savelib(LinusTools,DegreeMode,Constants,units,AllLinus,LibLocation):</Text-field>
 </Input>
-<Output><Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20cannot%20lock%20repository,%20C%3A%5CProgram%20Files%5CMaple%202023%5Clib%5CLinusTools.mla" hyperlink="true"><Font style="HyperlinkError" encoding="UTF-8">Error, cannot lock repository, C:\134Program Files\134Maple 2023\134lib\134LinusTools.mla</Font></Hyperlink></Text-field>
-</Output>
 </Group>
 <Group labelreference="L69" drawlabel="true" applyint="true" applyrational="true" applyexponent="false">
 <Input><Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>

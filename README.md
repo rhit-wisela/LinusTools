@@ -121,6 +121,9 @@
   - q = electron charge (C)
 
 # units Documentation
-  Multiply your number by its units to automatically convert it to m, J, kg, pasc, sec, F, H, Ohm.
+  Multiply your number by its units to automatically convert it to m, J, kg, pasc, s, F, H, Ohm, V, A.
   Set of prefixes is incomplete. Feel free to add your own its not hard.
   Notably does not support C to K conversion because you can't do that with multiplication.
+
+# AllLinus Documentation
+  This package is a macro that imports all packages in this tool. It does not contain any functions by itself.
