@@ -309,9 +309,9 @@ end module:</Text-field>
  
   export s:=1:
   export year:=s*3.155760000*10^7:
-  export day:=s*86400*sec:
-  export hr:=s*3600*sec:
-  export min:=s*60*sec:
+  export day:=s*86400:
+  export hr:=s*3600:
+  export min:=s*60:
   export ms:=s*1e-3:
   export us:=s*1e-6:
   export ns:=s*1e-9:
